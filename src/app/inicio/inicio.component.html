@@ -29,54 +29,27 @@
     
     <mat-grid-list cols="3" rowHeight="2:1">
 
-        <mat-grid-tile>
+        <mat-grid-tile *ngFor="let produto of produtos">
             <mat-card class="example-card">
-                <img mat-card-image src="./assets/img/tloujogo.png" alt="Jogo PS4 the last of us">
+                <img mat-card-image src="./src/assets/img/{{produto.foto}}" alt="">
 
                 <mat-card-header>
-                    <mat-card-title>The Last of Us Remaster PS4</mat-card-title>
+                    <mat-card-title>{{produto.produto}}</mat-card-title>
 
                 </mat-card-header>
-                
+                <mat-card-content>
+                    <p>
+                        {{produto.descricao}}
+                    </p>
+                </mat-card-content>
                 <mat-card-actions>
-                    <p>R$ 79,90</p>
+                    <p>{{produto.preco | currency: 'BRL'}}</p>
                     <button mat-button>COMPRAR</button>
                 </mat-card-actions>
             </mat-card>
         </mat-grid-tile>
 
-        <mat-grid-tile>
-            <mat-card class="example-card">
-                <img mat-card-image src="./assets/img/fifa.png" alt="Jogo PS4 Fifa 23">
-
-                <mat-card-header>
-                    <mat-card-title>Fifa 23</mat-card-title>
-
-                </mat-card-header>
-                
-                <mat-card-actions>
-                    <p>R$ 300,00</p>
-                    <button mat-button>COMPRAR</button>
-                </mat-card-actions>
-            </mat-card>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-            <mat-card class="example-card">
-                <img mat-card-image src="./assets/img/cod.png" alt="Jogo PS5 Call of Duty Modern Warfare II">
-
-                <mat-card-header>
-                    <mat-card-title>Call Of Duty Modern Warfare II</mat-card-title>
-
-                </mat-card-header>
-                
-                <mat-card-actions>
-                    <p>R$ 299,99</p>
-                    <button mat-button>COMPRAR</button>
-                </mat-card-actions>
-            </mat-card>
-        </mat-grid-tile>
-
+        
     </mat-grid-list>
 
 
